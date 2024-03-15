@@ -1,0 +1,363 @@
+:root {
+	--dark: 33, 37, 41;
+	--light: 248, 249, 250;
+	--white: 255, 255, 255;
+	--gray: 226, 226, 226;
+	--success: 60, 202, 136;
+	--success-dark: 25, 135, 84;
+	--primary: 13, 110, 253;
+	--primary-dark: 40, 70, 190;
+	--bg-header: 245, 245, 245;
+	--border: 204, 204, 204;
+	--shadow: 0 0 1rem rgba(var(--border), .5);
+	--base-color-body: rgba(var(--light), 1);
+	--base-color-texto: rgba(var(--dark), 1);
+	--base-texto-size: 1rem;
+	--base-line-height: 1.5em;
+	--base-font-weight: 400;
+	--base-fuente: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+*, *::before, *::after {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	background: transparent;
+	appearance: transparent;
+	outline: transparent;
+	border: 0;
+}
+@media (prefers-reduced-motion: no-preference) {
+  	:root {
+    	scroll-behavior: smooth;
+  	}
+}
+html, body {
+	width: 100%;
+	height: 100vh;
+}
+html {
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+}
+body {
+	--ImageBodyHome: url('../images/background_light_1.webp');
+	font-family: var(--base-fuente); 
+	font-size: var(--base-texto-size);
+	font-weight: var(--base-font-weight);
+	line-height: var(--base-line-height);
+	color: var(--base-color-texto);
+	-webkit-text-size-adjust: 100%;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	/* FONDO */
+	background-color: var(--base-color-body);
+	background-image: var(--ImageBodyHome);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: fixed;
+	background-size: cover;
+}
+body.DarkMode {
+	--ImageBodyHome: url('../images/background_dark_1.webp');
+	--base-color-body: rgba(var(--dark), 1);
+	--base-color-texto: rgba(var(--light), 1);
+	--bg-header: 31, 31, 31;
+	--shadow: 0 0 1rem rgba(0,0,0,.5);
+	--border: rgba(0,0,0,.5);
+}
+body.encript {
+	--ImageBodyHome: url('../images/background_light_2.webp');
+}
+body.DarkMode.encript {
+	--ImageBodyHome: url('../images/background_dark_2.webp');
+}
+small.modo {
+	position: fixed;
+	bottom: 10px;
+	left: -95px;
+	width: 130px;
+	height: 2rem;
+	font-weight: 600;
+	font-size: 1rem;
+	padding: 3px 32px 3px 20px;
+	border-radius: 0 10em 10em 0;
+	background-color: rgba(var(--bg-header), .6);
+	box-shadow: var(--shadow);
+	background-image: url('https://api.iconify.design/emojione/new-moon.svg');
+	cursor: pointer;
+	transition: left .5s ease-in-out;
+	transition-delay: .2s
+}
+small.modo:hover {
+	left: 0;
+	transition: left .5s ease-in-out;
+	transition-delay: .2s
+}
+small.modo kbd {
+	pointer-events: none
+}
+body.DarkMode small.modo {
+	background-image: url('https://api.iconify.design/emojione/sun.svg');
+}
+small.modo,
+body.DarkMode small.modo {
+	background-repeat: no-repeat;
+	background-position: 96% 3px;
+	background-size: 24px;
+}
+textarea {
+	background-color: rgba(var(--white), .9);
+	width: 100%;
+	padding: 20px;
+	height: 50vh;
+	resize: none;
+	border-radius: .4rem;
+	box-shadow: 7.6px 4.4px 5.3px rgba(0, 0, 0, 0.028), 25.5px 14.7px 17.9px rgba(0, 0, 0, 0.042), 114px 66px 80px rgba(0, 0, 0, 0.07);
+	font-size: 1rem;
+	font-family: Roboto;
+}
+textarea::placeholder {
+	font-style: italic;
+	color: #888;
+}
+.DarkMode textarea {
+	background-color: rgba(var(--dark), .9);
+	color:#FFF;
+}
+#salir {
+	top: 1.8rem;
+	right: 1rem;
+	font-weight: 600;
+	cursor: pointer;
+}
+#redes {
+	position: fixed;
+	bottom: 3rem;
+	left: 3px;
+	height: calc((2rem * 4) + 30px);
+}
+.redes {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+.redes a {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 2rem;
+	height: 2rem;
+	color: var(--base-color-texto);
+	background-color: rgba(var(--bg-header), .6);
+	backdrop-filter: blur(2px);
+	font-size: 1.6rem;
+	border-radius: .3rem;
+}
+.flex-center-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.flex-column {
+	flex-direction: column;
+}
+.position-relative {
+	position: relative;
+}
+.position-absolute {
+	position: absolute;
+}
+.botones {
+	justify-content: space-around;
+	width: 100%;
+	margin-top: 30px;
+}
+.btn {
+	--shadow: ;
+	border-radius: .4rem;
+	display: inline-block;
+	height: 2.5rem;
+	line-height: 2.5rem;
+	font-weight: 500;
+	font-size: 1rem;
+	min-width: 140px;
+	padding: 0 20px;
+	color: #FFF;
+}
+.btn:first-child {
+	background-color: rgb(var(--primary));
+}
+.btn:last-child {
+	background-color: rgb(var(--success));
+}
+.DarkMode .btn:first-child {
+	background-color: rgb(var(--primary-dark));
+}
+.DarkMode .btn:last-child {
+	background-color: rgb(var(--success-dark));
+}
+#app,
+#app .modos {
+	width: 100%;
+	height: 100%;
+}
+#app .modos {
+	width: 70%;
+	gap: 10px;
+	margin: 0 auto;
+}
+#app .modos .encriptadores {
+	width: calc(100% / 3);
+	color: var(--base-color-texto);
+	background-color: rgba(var(--bg-header), .6);
+	backdrop-filter: blur(2px);
+	height: 220px;
+	text-align: center;
+	border-radius: .4rem;
+	cursor: pointer;
+}
+#app .modos .encriptadores:hover {
+	background-color: rgba(var(--primary), .6);
+	color: var(--base-color-body);
+}
+.DarkMode #app .modos .encriptadores:hover {
+	background-color: rgba(var(--success), .6);
+	color: var(--base-color-texto);
+}
+#app .modos .encriptadores iconify-icon {
+	font-size: 5em;
+	pointer-events: none;
+}
+#app .modos .encriptadores span {
+	text-transform: uppercase;
+	font-weight: 600;
+	font-size: 1.2em;
+	padding: 6px 0;
+	display: block;
+	width: 80%;
+	pointer-events: none;
+}
+
+#app .pageEncript.grid-template-2 {
+	--sz: 350px;
+	--szm: -350px;
+	width: 80vw;
+	height: 90vh;
+	display: grid;
+	grid-template-columns: 1fr var(--sz);
+	gap: 10px;
+	background-color: #fff9;
+	border-radius: .4rem;
+	box-shadow: 7.6px 4.4px 5.3px rgba(0, 0, 0, 0.028), 25.5px 14.7px 17.9px rgba(0, 0, 0, 0.042), 114px 66px 80px rgba(0, 0, 0, 0.07);
+}
+.DarkMode #app .pageEncript.grid-template-2 {
+	background-color: #0009;
+}
+#app .pageEncript.grid-template-2 .area-input h3 {
+	display: block;
+	width: 100%;
+	font-size: 2rem;
+}
+#app .pageEncript.grid-template-2 .resultado {
+	padding: 1rem;
+	overflow: hidden;
+}
+#app .pageEncript.grid-template-2 .resultado .caja-textos img {
+	width: 80%;
+	margin: 2rem auto;
+	display: block;
+	position: relative;
+}
+#app .pageEncript.grid-template-2 .resultado .caja-textos .h3,
+#app .pageEncript.grid-template-2 .resultado .caja-textos .h4 {
+	color: var(--base-color-texto);
+	display: block;
+	text-align: center;
+	padding: 1rem 0;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+#app .pageEncript.grid-template-2 .resultado .caja-textos .h3 {
+	font-size: 2rem;
+	line-height: 2.2rem;
+}
+#app .pageEncript.grid-template-2 .resultado .caja-textos .h4 {
+	font-size: 1.4rem;
+	line-height: 2rem;
+}
+#app .pageEncript.grid-template-2 .resultado .resultado-ver {
+	height: 100%;
+	justify-content: space-between;
+	flex-direction: column;
+	padding: 20px;
+	background-color: #FFF9;
+	width: var(--sz);
+	right: var(--szm);
+	top: 0;
+}
+#app .pageEncript.grid-template-2 .resultado.ver .resultado-ver {
+	right: 0;
+}
+#app .pageEncript.grid-template-2 .resultado .resultado-ver textarea {
+	height: 80%;
+}
+.DarkMode #app .pageEncript.grid-template-2 .resultado .resultado-ver {
+	background-color: #0005;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+	#app .modos {
+		width: 80%;
+	}
+	#app .pageEncript.grid-template-2 {
+		width: 90%;
+	}
+}
+@media (max-width: 768px) {
+	#app .modos {
+		width: 85%;
+		flex-direction: row;
+	}
+	#app .modos .encriptadores {
+		height: 250px;
+	}
+}
+@media (min-width: 320px) and (max-width: 560px) {
+	#app .modos {
+		width: 85%;
+		flex-direction: column;
+	}
+	.botones .btn {
+		width: 100%;
+		margin: 6px;
+	}
+	#app .modos .encriptadores {
+		height: 180px;
+		width: 100%;
+	}
+	#app .modos .encriptadores iconify-icon {
+		font-size: 6em;
+	}
+	#app .modos .encriptadores span {
+		width: 70%;
+	}
+	#app .pageEncript.grid-template-2 {
+		height: auto;
+		width: 100%;
+	}
+	#app .pageEncript.grid-template-2 .resultado .resultado-ver {
+		width: 100%;
+		right: -100%;
+	}
+	.botones,
+	#app .pageEncript.grid-template-2,
+	.flex-center-center {
+		display: block;
+	}
+	#app .pageEncript.grid-template-2 .area-input textarea {
+		margin-top: 20px;
+	}
+	#salir {
+		top: 10px;
+		right: 10px;
+	}
+}

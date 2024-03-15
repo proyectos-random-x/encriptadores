@@ -1,0 +1,26 @@
+<div class="pageEncript grid-template-2">
+
+   <div class="area-input position-relative flex-center-center flex-column" style="justify-content: space-between; padding: 2rem 1rem">
+      <h3>Modo: <b style="text-transform: capitalize;">Básica</b> <small style="font-size: 10px;display: block;" id="info">No se adminten mayúsculas, números y carácteres especiales</small></h3>
+      <textarea id="input" required placeholder="Ingrese el texto aquí"></textarea>
+
+      <span id="salir" class="position-absolute">Salir</span>
+      
+      <div class="botones flex-center-center">
+         <button class="btn primary" id="encriptar">Encriptar</button>
+         <button class="btn success" id="desencriptar">Desencriptar</button>
+      </div>
+   </div>
+     
+   <div class="resultado overflow-hidden position-relative">
+      <div class="caja-textos flex-center-center flex-column">
+         <img src="images/cifrador.png">
+         <span class="h3" style="display: none;">No hay mensaje encriptados</span>
+         <span class="h4">Ingresa el texto que deseas encriptar o desencriptar.</span>
+      </div>
+      <div class="resultado-ver flex-center-center position-absolute" style="display:;">
+         <textarea id="resultado" placeholder="Aquí estará su mensaje encriptado" disabled ></textarea>
+         <button class="btn success" id="copiar">Copiar</button>
+      </div>
+   </div>
+</div>
